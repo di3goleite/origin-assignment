@@ -47,5 +47,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.js",
+      "!<rootDir>/node_modules/"
+    ]
   }
 }
