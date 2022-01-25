@@ -7,14 +7,8 @@ export default {
   component: CurrencyInput,
   args: {
     id: 'currency-input',
-    label: 'Currency'
+    label: 'Annual income'
   }
-  // argTypes: {
-  //   type: {
-  //     options: ['text', 'number'],
-  //     control: { type: 'radio' }
-  //   }
-  // }
 };
 
 export const Basic = (args) => <CurrencyInput {...args} />;

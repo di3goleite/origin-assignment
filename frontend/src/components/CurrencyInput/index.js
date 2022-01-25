@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { IMaskInput } from 'react-imask';
 
+import icons from '../../assets/icons';
 import './index.scss';
 
 const CurrencyInput = ({ id, label }) => {
@@ -15,8 +16,8 @@ const CurrencyInput = ({ id, label }) => {
   return (
     <div className="currency-input">
       <label htmlFor={id}>{label}</label>
-      <div>
-        <span>$</span>
+      <div className="currency-input-wrapper">
+        <img src={icons.dollar} alt="Dollar currency symbol" />
         <IMaskInput
           id={id}
           value={value}
@@ -24,6 +25,7 @@ const CurrencyInput = ({ id, label }) => {
           mask={Number}
           unmask={true}
           thousandsSeparator=","
+          placeholder="0"
         />
       </div>
     </div>
