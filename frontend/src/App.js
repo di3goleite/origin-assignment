@@ -1,5 +1,7 @@
 import React from 'react';
 
+import CurrencyInput from './components/CurrencyInput';
+
 import logo from './logo.svg';
 import './App.scss';
 
@@ -11,6 +13,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <CurrencyInput id="currency-input" label="Currency" />
         <a
           className="App-link"
           href="https://reactjs.org"
