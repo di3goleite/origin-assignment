@@ -1,5 +1,5 @@
 import originLogo from './origin.svg';
 
-module.exports = {
+export default {
   originLogo
 };

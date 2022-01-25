@@ -2,7 +2,7 @@ import originIcon from './origin.svg';
 import lock from './lock.svg';
 import dollar from './dollar.svg';
 
-module.exports = {
+export default {
   originIcon,
   lock,
   dollar
