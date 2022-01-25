@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { IMaskInput } from 'react-imask';
 
+import './index.scss';
+
 const CurrencyInput = ({ id, label }) => {
   const [value, setValue] = useState('');
 
@@ -11,16 +13,19 @@ const CurrencyInput = ({ id, label }) => {
   };
 
   return (
-    <div>
+    <div className="currency-input">
       <label htmlFor={id}>{label}</label>
-      <IMaskInput
-        id={id}
-        value={value}
-        onAccept={handleChange}
-        mask={Number}
-        unmask={true}
-        thousandsSeparator=","
-      />
+      <div>
+        <span>$</span>
+        <IMaskInput
+          id={id}
+          value={value}
+          onAccept={handleChange}
+          mask={Number}
+          unmask={true}
+          thousandsSeparator=","
+        />
+      </div>
     </div>
   );
 };

@@ -1,0 +1,11 @@
+@import '/src/styles/global.scss';
+
+.currency-input {
+  /* $neutralWhite */
+  background: $neutralWhite;
+  /* $blueGray50 */
+
+  border: 1px solid $blueGray50;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
