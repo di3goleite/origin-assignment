@@ -1,0 +1,48 @@
+@import '/src/assets/styles/global.scss';
+
+.score-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+
+  & > div {
+    background-color: $blueGray50;
+
+    width: calc(100%/3);
+    height: 16px;
+
+    border: 2px solid $neutralWhite;
+    border-radius: 24px;
+    box-sizing: border-box;
+
+    &:nth-child(2) {
+      margin-left: -24px;
+      margin-right: -24px;
+    }
+  }
+
+  &.healthy {
+    & > div {
+      background-color: $green500;
+    }
+  }
+
+  &.average {
+    & > div:nth-child(n+2) {
+      background-color: $sun700;
+    }
+  }
+
+  &.unhealthy {
+    & > div:nth-child(n+3) {
+      background-color: $red700;
+    }
+  }
+
+  @media (min-width: $medium) {
+    & > div {
+      height: 32px;
+    }
+  }
+}
