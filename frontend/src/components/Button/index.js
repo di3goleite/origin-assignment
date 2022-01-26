@@ -2,10 +2,10 @@ import React from 'react';
 
 import './index.scss';
 
-const Button = ({ children, isSecondary, onClick }) => {
+const Button = ({ children, variant, onClick }) => {
   return (
     <button
-      className={`btn btn-${isSecondary ? 'secondary' : 'primary'}`}
+      className={`btn btn-${variant ? variant : 'primary'}`}
       onClick={onClick}
     >
       {children}
