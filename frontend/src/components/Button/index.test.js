@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import Button from '.';
 
 describe('<Button />', () => {
-  it('should render input', () => {
+  it('should render button', () => {
     const buttonText = 'Continue';
 
     render(<Button text={buttonText} />);
