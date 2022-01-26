@@ -7,7 +7,7 @@ describe('<Button />', () => {
   it('should render button', () => {
     const buttonText = 'Continue';
 
-    render(<Button text={buttonText} />);
+    render(<Button>{buttonText}</Button>);
     expect(screen.getByText(buttonText)).toBeInTheDocument();
   });
 });
