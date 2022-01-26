@@ -1,0 +1,12 @@
+@import '/src/assets/styles/global.scss';
+
+.card {
+  padding: 32px;
+  background: $neutralWhite;
+  box-shadow: 0px 2px 10px rgba($color: $blueGray900, $alpha: 0.08);
+  border-radius: 8px;
+
+  h1 {
+    color: $blueGray900;
+  }
+}
