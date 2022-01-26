@@ -4,7 +4,16 @@ import ScoreBar from '.';
 
 export default {
   title: 'ScoreBar',
-  component: ScoreBar
+  component: ScoreBar,
+  args: {
+    type: ''
+  },
+  argTypes: {
+    type: {
+      options: ['', 'healthy', 'average', 'unhealthy'],
+      control: { type: 'select' }
+    }
+  }
 };
 
 export const Basic = (args) => <ScoreBar {...args} />;
