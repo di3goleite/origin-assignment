@@ -1,0 +1,16 @@
+@import '/src/assets/styles/global.scss';
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  padding: 24px;
+
+  background: $neutralWhite;
+
+  img {
+    color: $blueGray900;
+  }
+}
