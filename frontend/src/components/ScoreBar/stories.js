@@ -10,7 +10,7 @@ export default {
   },
   argTypes: {
     type: {
-      options: ['', 'healthy', 'average', 'unhealthy'],
+      options: ['healthy', 'average', 'unhealthy'],
       control: { type: 'select' }
     }
   }
