@@ -2,9 +2,9 @@ import React from 'react';
 
 import './index.scss';
 
-const ScoreBar = ({ type }) => {
+const Scorebar = ({ type }) => {
   return (
-    <div className={`score-bar ${type}`}>
+    <div className={`scorebar ${type}`}>
       <div></div>
       <div></div>
       <div></div>
@@ -12,4 +12,4 @@ const ScoreBar = ({ type }) => {
   );
 };
 
-export default ScoreBar;
+export default Scorebar;
