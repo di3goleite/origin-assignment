@@ -1,0 +1,33 @@
+@import '/src/assets/styles/global.scss';
+
+.btn {
+  background: $neutralWhite;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  border: none;
+  border-radius: 32px;
+  padding: 20px 32px;
+  width: auto;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.btn-primary {
+    background: $brandColorPrimary;
+    color: $neutralWhite;
+  }
+
+  &.btn-secondary {
+    background: $neutralWhite;
+    color: $brandColorPrimary;
+
+    box-sizing: border-box;
+    border: 2px solid $brandColorPrimary;
+
+    // Change paddings to compensate added border width
+    padding: 18px 30px;
+  }
+}
