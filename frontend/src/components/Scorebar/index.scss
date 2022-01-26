@@ -40,7 +40,7 @@
     }
   }
 
-  @media (min-width: $medium) {
+  @media (min-width: $medium-device) {
     & > div {
       height: 32px;
     }
