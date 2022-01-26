@@ -3,7 +3,7 @@ import React from 'react';
 import CurrencyInput from '.';
 
 export default {
-  title: 'CurrencyInput',
+  title: 'Input',
   component: CurrencyInput,
   args: {
     id: 'currency-input',
@@ -11,4 +11,4 @@ export default {
   }
 };
 
-export const Basic = (args) => <CurrencyInput {...args} />;
+export const Currency = (args) => <CurrencyInput {...args} />;
