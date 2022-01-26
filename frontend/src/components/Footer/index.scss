@@ -1,0 +1,23 @@
+@import '/src/assets/styles/global.scss';
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  padding: 24px;
+
+  background: transparent;
+
+  img {
+    margin-right: 16px;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    color: $blueGray400;
+    margin: 0;
+  }
+}
