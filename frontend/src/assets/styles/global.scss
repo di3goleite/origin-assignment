@@ -1,7 +1,17 @@
-@import 'grid';
+@import 'constraints';
 @import 'colors';
 @import 'typography';
 
 body {
   margin: 0;
+}
+
+.container {
+  width: 100%;
+  height: calc(100vh - #{$navbar-height});
+
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: $background;
 }
