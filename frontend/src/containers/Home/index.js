@@ -6,7 +6,7 @@ import components from '../../components';
 import icons from '../../assets/icons';
 import './index.scss';
 
-const { Card, CurrencyInput, Button } = components;
+const { Card, Input, Button } = components;
 
 function Home() {
   return (
@@ -23,8 +23,8 @@ function Home() {
           </div>
         </div>
         <div className="card-body">
-          <CurrencyInput id="annual-income" label="Annual Income" />
-          <CurrencyInput id="monthly-costs" label="Monthly Costs" />
+          <Input id="annual-income" label="Annual Income" />
+          <Input id="monthly-costs" label="Monthly Costs" />
         </div>
         <div className="card-footer">
           <Button variant="primary">Continue</Button>

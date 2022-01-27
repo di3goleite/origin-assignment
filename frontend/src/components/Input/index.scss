@@ -1,10 +1,10 @@
 @import '/src/assets/styles/global.scss';
 
-.currency-input {
+.input {
   background: $neutralWhite;
 
   &.error {
-    .currency-input-wrapper {
+    .input-wrapper {
       border: 1px solid $feedbackDangerFull;
       background: $feedbackDangerLight;
       margin-bottom: 4px;
@@ -35,7 +35,7 @@
     color: $blueGray900;
   }
 
-  .currency-input-wrapper {
+  .input-wrapper {
     display: flex;
     align-items: center;
 
@@ -68,7 +68,7 @@
     }
   }
 
-  .currency-input-error {
+  .input-error {
     font-size: 12px;
     line-height: 120%;
     color: $feedbackDangerFull;

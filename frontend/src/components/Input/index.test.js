@@ -1,14 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import CurrencyInput from '.';
+import Input from '.';
 
-describe('<CurrencyInput />', () => {
+describe('<Input />', () => {
   it('should render input', () => {
-    const inputId = 'currency-input';
+    const inputId = 'input';
     const labelText = 'Currency';
 
-    render(<CurrencyInput id={inputId} label={labelText} />);
+    render(<Input id={inputId} label={labelText} />);
     expect(screen.getByLabelText(labelText)).toBeInTheDocument();
   });
 });
