@@ -9,11 +9,16 @@
 
   .container {
     flex: 1;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    h1 {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 120%;
+    }
 
     h2 {
       font-size: 18px;
@@ -23,6 +28,12 @@
       color: $brandColorPrimary;
       line-height: 150%;
       margin-bottom: 24px;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 150%;
     }
 
     .card {
@@ -36,16 +47,6 @@
 
         img {
           margin-bottom: 16px;
-        }
-
-        h1 {
-          font-size: 20px;
-          font-weight: 500;
-        }
-
-        p {
-          font-size: 14px;
-          font-weight: 400;
         }
       }
 
@@ -74,9 +75,17 @@
 
   @media (min-width: $medium-device) {
     .container {
+      h1 {
+        font-size: 24px;
+      }
+
       h2 {
         font-size: 20px;
         margin-bottom: 24px;
+      }
+
+      p {
+        font-size: 16px;
       }
 
       .card {
@@ -88,14 +97,6 @@
           img {
             margin-right: 16px;
             margin-bottom: 0;
-          }
-
-          h1 {
-            font-size: 24px;
-          }
-
-          p {
-            font-size: 16px;
           }
         }
 
