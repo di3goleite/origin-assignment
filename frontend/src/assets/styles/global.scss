@@ -1,4 +1,4 @@
-@import 'constraints';
+@import 'grid';
 @import 'colors';
 @import 'typography';
 
@@ -6,12 +6,22 @@ body {
   margin: 0;
 }
 
-.container {
-  width: 100%;
-  height: calc(100vh - #{$navbar-height} - #{$footer-height});
+#root {
+  height: 100vh;
+}
 
-  margin-left: auto;
-  margin-right: auto;
+.container {
+  flex: 1;
+
+  padding-left: 16px;
+  padding-right: 16px;
 
   background-color: $background;
+
+  @media (min-width: $medium-device) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
 }
