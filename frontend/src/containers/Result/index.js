@@ -1,22 +1,15 @@
 import React from 'react';
 
 import components from '../../components';
+import { scoreTypeMessage } from '../../utils/constraints';
+import { capitalize } from '../../utils/lib';
 
 import icons from '../../assets/icons';
 import './index.scss';
 
 const { Navbar, Footer, Card, Button, Scorebar } = components;
-const scoreTypeMessage = {
-  healthy: 'Congratulations!',
-  average: 'There is room for improvement.',
-  unhealthy: 'Caution!'
-};
 
 function Result({ score = 'healthy' }) {
-  const capitalize = (word) => {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  };
-
   return (
     <div className="result">
       <Navbar />
