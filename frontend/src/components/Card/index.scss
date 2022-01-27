@@ -1,7 +1,7 @@
 @import '/src/assets/styles/global.scss';
 
 .card {
-  padding: 32px;
+  padding: 16px;
   background: $neutralWhite;
   box-shadow: 0px 2px 10px rgba($color: $blueGray900, $alpha: 0.08);
   border-radius: 8px;
@@ -12,5 +12,13 @@
 
   p {
     color: $blueGray400;
+  }
+
+  h1, p {
+    line-height: 120%;
+  }
+
+  @media (min-width: $medium-device) {
+    padding: 32px;
   }
 }
