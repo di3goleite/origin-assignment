@@ -23,6 +23,12 @@ export const Primary = (args) => (
   </Button>
 );
 
+export const Loading = (args) => (
+  <Button {...args} type="primary" isLoading>
+    Loading...
+  </Button>
+);
+
 export const Secondary = (args) => (
   <Button {...args} variant="secondary">
     Return

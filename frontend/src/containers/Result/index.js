@@ -18,7 +18,7 @@ function Result({ score = 'healthy' }) {
       </h2>
       <Card>
         <div className="card-header">
-          <img src={icons.originIcon} alt="Origin Financial Logo" />
+          <img src={icons.origin} alt="Origin Financial Logo" />
         </div>
         <div className="card-body">
           <Scorebar type={score} />

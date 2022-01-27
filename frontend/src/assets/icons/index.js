@@ -1,9 +1,11 @@
-import originIcon from './origin.svg';
-import lock from './lock.svg';
 import dollar from './dollar.svg';
+import loading from './loading.svg';
+import lock from './lock.svg';
+import origin from './origin.svg';
 
 export default {
-  originIcon,
+  dollar,
+  loading,
   lock,
-  dollar
+  origin
 };

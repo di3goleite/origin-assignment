@@ -16,7 +16,7 @@ function Home() {
       </h2>
       <Card>
         <div className="card-header">
-          <img src={icons.originIcon} alt="Origin Financial Logo" />
+          <img src={icons.origin} alt="Origin Financial Logo" />
           <div>
             <h1>Financial wellness test</h1>
             <p>Enter your financial information below</p>
