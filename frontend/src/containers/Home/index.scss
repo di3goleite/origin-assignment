@@ -1,7 +1,58 @@
+@import '/src/assets/styles/global.scss';
+
 .home {
   .container {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+
+    h2 {
+      color: $brandColorPrimary;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .card {
+      .card-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+
+        img {
+          margin-right: 16px;
+        }
+
+        h1 {
+          font-size: 24px;
+          font-weight: 500;
+        }
+
+        p {
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+      .card-body {
+        display: flex;
+        justify-content: space-between;
+
+        gap: 16px;
+        margin-bottom: 32px;
+
+        .currency-input {
+          width: 232px;
+        }
+      }
+
+      .card-footer {
+        display: flex;
+        justify-content: center;
+
+        .btn {
+          width: 320px;
+        }
+      }
+    }
   }
 }
