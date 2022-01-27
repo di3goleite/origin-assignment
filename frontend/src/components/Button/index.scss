@@ -18,6 +18,14 @@
   &.btn-primary {
     background: $brandColorPrimary;
     color: $neutralWhite;
+
+    &:hover {
+      box-shadow: 0px 12px 48px rgba(30, 42, 50, 0.12);
+    }
+
+    &:active, &:focus {
+      background: $pacificBlue800;
+    }
   }
 
   &.btn-secondary {
@@ -27,7 +35,16 @@
     box-sizing: border-box;
     border: 2px solid $brandColorPrimary;
 
-    // Change paddings to compensate added border width
+    // Subtract -2px to compensate added border width
     padding: 18px 30px;
+
+    &:hover {
+      color: $brandColorSecondary;
+      border: 2px solid $brandColorSecondary;
+    }
+
+    &:active, &:focus {
+      background: $blueGray50;
+    }
   }
 }

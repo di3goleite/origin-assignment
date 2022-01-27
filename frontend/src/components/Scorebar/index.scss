@@ -7,7 +7,7 @@
   flex-direction: row-reverse;
 
   & > div {
-    background-color: $blueGray50;
+    background: $blueGray50;
 
     width: calc(100%/3);
     height: 16px;
@@ -30,19 +30,19 @@
 
   &.healthy {
     & > div {
-      background-color: $green500;
+      background: $green500;
     }
   }
 
   &.average {
     & > div:nth-child(n+2) {
-      background-color: $sun700;
+      background: $sun700;
     }
   }
 
   &.unhealthy {
     & > div:nth-child(n+3) {
-      background-color: $red700;
+      background: $red700;
     }
   }
 

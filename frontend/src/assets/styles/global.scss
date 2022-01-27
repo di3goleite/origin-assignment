@@ -16,7 +16,7 @@ body {
   padding-left: 16px;
   padding-right: 16px;
 
-  background-color: $background;
+  background: $background;
 
   @media (min-width: $medium-device) {
     width: 100%;
