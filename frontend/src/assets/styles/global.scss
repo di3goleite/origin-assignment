@@ -8,7 +8,7 @@ body {
 
 .container {
   width: 100%;
-  height: calc(100vh - #{$navbar-height});
+  height: calc(100vh - #{$navbar-height} - #{$footer-height});
 
   margin-left: auto;
   margin-right: auto;
