@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "start": "node src/index.js",
     "test": "jest --coverage --watchAll",
     "lint": "eslint src"
   },
