@@ -5,7 +5,7 @@ import { IMaskInput } from 'react-imask';
 import icons from '../../assets/icons';
 import './index.scss';
 
-const CurrencyInput = ({ id, label }) => {
+const CurrencyInput = ({ id, label, error }) => {
   const [value, setValue] = useState('');
 
   const handleChange = (v) => {
@@ -14,7 +14,7 @@ const CurrencyInput = ({ id, label }) => {
   };
 
   return (
-    <div className="currency-input">
+    <div className={`currency-input ${error ? 'error' : ''}`}>
       <label htmlFor={id}>{label}</label>
       <div className="currency-input-wrapper">
         <img src={icons.dollar} alt="Dollar currency symbol" />
@@ -28,6 +28,7 @@ const CurrencyInput = ({ id, label }) => {
           placeholder="0"
         />
       </div>
+      <span className="currency-input-error">{error}</span>
     </div>
   );
 };

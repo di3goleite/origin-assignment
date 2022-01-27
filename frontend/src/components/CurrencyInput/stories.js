@@ -12,3 +12,10 @@ export default {
 };
 
 export const Currency = (args) => <CurrencyInput {...args} />;
+
+export const CurrencyError = (args) => (
+  <CurrencyInput
+    {...args}
+    error="Annual income needs to be greater than zero"
+  />
+);

@@ -3,6 +3,27 @@
 .currency-input {
   background: $neutralWhite;
 
+  &.error {
+    .currency-input-wrapper {
+      border: 1px solid $feedbackDangerFull;
+      background: $feedbackDangerLight;
+      margin-bottom: 4px;
+
+      &:focus-within {
+        border: 1px solid $feedbackDangerFull;
+        background: $neutralWhite;
+
+        input {
+          background: $neutralWhite;
+        }
+      }
+
+      input {
+        background: $feedbackDangerLight;
+      }
+    }
+  }
+
   label {
     display: inline-block;
     margin-bottom: 7px;
@@ -24,6 +45,10 @@
     box-sizing: border-box;
     border-radius: 4px;
 
+    &:focus-within {
+      border: 1px solid $brandColorSecondary;
+    }
+
     img {
       margin-right: 8px;
     }
@@ -41,6 +66,12 @@
         outline: none;
       }
     }
+  }
+
+  .currency-input-error {
+    font-size: 12px;
+    line-height: 120%;
+    color: $feedbackDangerFull;
   }
 
   @media (min-width: $medium-device) {
