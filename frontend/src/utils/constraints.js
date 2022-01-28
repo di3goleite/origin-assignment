@@ -1,5 +1,14 @@
 export const scoreTypeMessage = {
-  healthy: 'Congratulations!',
-  medium: 'There is room for improvement.',
-  low: 'Caution!'
+  healthy: {
+    title: 'Congratulations!',
+    state: 'Healthy'
+  },
+  medium: {
+    title: 'There is room for improvement.',
+    state: 'Average'
+  },
+  low: {
+    title: 'Caution!',
+    state: 'Unhealthy'
+  }
 };

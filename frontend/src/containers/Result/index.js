@@ -3,7 +3,6 @@ import React from 'react';
 import BaseContainer from '../Base';
 import components from '../../components';
 import { scoreTypeMessage } from '../../utils/constraints';
-import { capitalize } from '../../utils/lib';
 
 import icons from '../../assets/icons';
 import './index.scss';
@@ -23,10 +22,10 @@ function Result({ score = 'healthy' }) {
         <div className="card-body">
           <Scorebar type={score} />
           <div>
-            <h1>{scoreTypeMessage[score]}</h1>
+            <h1>{scoreTypeMessage[score].title}</h1>
             <p>
               {'Your financial wellness score is '}
-              <b>{capitalize(score)}</b>
+              <b>{scoreTypeMessage[score].state}</b>
               {'.'}
             </p>
           </div>
