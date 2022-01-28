@@ -21,10 +21,6 @@
     cursor: pointer;
   }
 
-  &:disabled {
-    cursor: not-allowed;
-  }
-
   &.is-loading {
     padding-top: 17.5px;
     padding-bottom: 17.5px;
@@ -54,12 +50,6 @@
     &:active, &:focus {
       background: $pacificBlue800;
     }
-
-    &:disabled {
-      background: $blueGray50;
-      color: $blueGray200;
-      box-shadow: none;
-    }
   }
 
   &.btn-secondary {
@@ -79,11 +69,6 @@
 
     &:active, &:focus {
       background: $blueGray50;
-    }
-
-    &:disabled {
-      color: $blueGray200;
-      border: 2px solid $blueGray200;
     }
   }
 }
