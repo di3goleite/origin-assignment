@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import BaseContainer from '../Base';
 import components from '../../components';
@@ -9,7 +10,11 @@ import './index.scss';
 
 const { Card, Button, Scorebar } = components;
 
-function Result({ score = 'healthy' }) {
+function Result() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { score } = location.state;
+
   return (
     <BaseContainer className="result">
       <h2>
@@ -31,7 +36,9 @@ function Result({ score = 'healthy' }) {
           </div>
         </div>
         <div className="card-footer">
-          <Button variant="secondary">Return</Button>
+          <Button variant="secondary" onClick={() => navigate('/')}>
+            Return
+          </Button>
         </div>
       </Card>
     </BaseContainer>

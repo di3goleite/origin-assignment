@@ -5,12 +5,12 @@ import { IMaskInput } from 'react-imask';
 import icons from '../../assets/icons';
 import './index.scss';
 
-const Input = ({ id, label, variant, error }) => {
+const Input = ({ id, label, variant, error, onChange }) => {
   const [value, setValue] = useState('');
 
-  const handleChange = (v) => {
-    setValue(v);
-    console.log(value);
+  const handleChange = (value) => {
+    setValue(value);
+    onChange(value);
   };
 
   const renderInput = (variant) => {

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import BaseContainer from '../Base';
 import components from '../../components';
+import { computeScore } from '../../utils/api';
 
 import icons from '../../assets/icons';
 import './index.scss';
@@ -9,6 +11,25 @@ import './index.scss';
 const { Card, Input, Button } = components;
 
 function Home() {
+  const [annualIncome, setAnnualIncome] = useState('');
+  const [monthlyCosts, setMonthlyCosts] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const onSubmit = async () => {
+    try {
+      setIsLoading(true);
+      const result = await computeScore({ annualIncome, monthlyCosts });
+      navigate('/result', {
+        state: { score: String(result.score).toLowerCase() }
+      });
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <BaseContainer className="home">
       <h2>
@@ -23,11 +44,21 @@ function Home() {
           </div>
         </div>
         <div className="card-body">
-          <Input id="annual-income" label="Annual Income" />
-          <Input id="monthly-costs" label="Monthly Costs" />
+          <Input
+            id="annual-income"
+            label="Annual Income"
+            onChange={setAnnualIncome}
+          />
+          <Input
+            id="monthly-costs"
+            label="Monthly Costs"
+            onChange={setMonthlyCosts}
+          />
         </div>
         <div className="card-footer">
-          <Button variant="primary">Continue</Button>
+          <Button variant="primary" onClick={onSubmit} isLoading={isLoading}>
+            Continue
+          </Button>
         </div>
       </Card>
     </BaseContainer>
