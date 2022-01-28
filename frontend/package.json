@@ -7,6 +7,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "cypress": "cypress open",
     "lint": "eslint src",
     "storybook": "start-storybook -p 3001 -s public",
     "build-storybook": "build-storybook -s public"
@@ -34,8 +35,10 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "babel-jest": "^27.4.6",
+    "cypress": "^9.3.1",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-jest": "^26.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
