@@ -10,7 +10,7 @@ export default {
   },
   argTypes: {
     type: {
-      options: ['healthy', 'average', 'unhealthy'],
+      options: ['healthy', 'medium', 'low'],
       control: { type: 'select' }
     }
   }
@@ -18,5 +18,5 @@ export default {
 
 export const Basic = (args) => <Scorebar {...args} />;
 export const Healthy = (args) => <Scorebar {...args} type="healthy" />;
-export const Average = (args) => <Scorebar {...args} type="average" />;
-export const Unhealthy = (args) => <Scorebar {...args} type="unhealthy" />;
+export const Medium = (args) => <Scorebar {...args} type="medium" />;
+export const Low = (args) => <Scorebar {...args} type="low" />;

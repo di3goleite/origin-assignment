@@ -34,13 +34,13 @@
     }
   }
 
-  &.average {
+  &.medium {
     & > div:nth-child(n+2) {
       background: $sun700;
     }
   }
 
-  &.unhealthy {
+  &.low {
     & > div:nth-child(n+3) {
       background: $red700;
     }
