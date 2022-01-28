@@ -1,5 +1,11 @@
 {
-  "name": "financial-score-api",
+  "name": "financial-score-backend",
+  "description": "Origin - Financial wellness test",
+  "author": {
+    "name": "Diego Leite",
+    "email": "contato@diegoleite.dev",
+    "url": "https://diegoleite.dev"
+  },
   "version": "1.0.0",
   "private": true,
   "scripts": {
