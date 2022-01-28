@@ -11,22 +11,30 @@ import './index.scss';
 const { Card, Input, Button } = components;
 
 function Home() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasInputError, setHasInputError] = useState(false);
   const [annualIncome, setAnnualIncome] = useState('');
   const [monthlyCosts, setMonthlyCosts] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+
   const navigate = useNavigate();
 
   const onSubmit = async () => {
-    try {
-      setIsLoading(true);
-      const result = await computeScore({ annualIncome, monthlyCosts });
-      navigate('/result', {
-        state: { score: String(result.score).toLowerCase() }
-      });
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setIsLoading(false);
+    if (!annualIncome || !monthlyCosts) {
+      setHasInputError(true);
+    } else {
+      try {
+        setIsLoading(true);
+        setHasInputError(false);
+
+        const result = await computeScore({ annualIncome, monthlyCosts });
+        navigate('/result', {
+          state: { score: String(result.score).toLowerCase() }
+        });
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -48,15 +56,24 @@ function Home() {
             id="annual-income"
             label="Annual Income"
             onChange={setAnnualIncome}
+            onError={setHasInputError}
+            isRequired
           />
           <Input
             id="monthly-costs"
             label="Monthly Costs"
             onChange={setMonthlyCosts}
+            onError={setHasInputError}
+            isRequired
           />
         </div>
         <div className="card-footer">
-          <Button variant="primary" onClick={onSubmit} isLoading={isLoading}>
+          <Button
+            variant="primary"
+            onClick={onSubmit}
+            disabled={hasInputError}
+            isLoading={isLoading}
+          >
             Continue
           </Button>
         </div>

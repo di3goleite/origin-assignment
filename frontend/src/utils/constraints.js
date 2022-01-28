@@ -12,3 +12,7 @@ export const scoreTypeMessage = {
     state: 'Unhealthy'
   }
 };
+
+export const validationMessages = {
+  required: 'This field is required'
+};

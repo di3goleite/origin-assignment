@@ -2,15 +2,25 @@ import React, { useState } from 'react';
 
 import { IMaskInput } from 'react-imask';
 
+import { validationMessages } from '../../utils/constraints';
 import icons from '../../assets/icons';
 import './index.scss';
 
-const Input = ({ id, label, variant, error, onChange }) => {
+const Input = ({ id, label, variant, isRequired, onChange, onError }) => {
+  const [error, setError] = useState('');
   const [value, setValue] = useState('');
 
-  const handleChange = (value) => {
-    setValue(value);
-    onChange(value);
+  const handleChange = (newValue) => {
+    setValue(newValue);
+    onChange(newValue);
+
+    if (isRequired && !newValue) {
+      setError(validationMessages.required);
+      onError(true);
+    } else {
+      setError('');
+      onError(false);
+    }
   };
 
   const renderInput = (variant) => {
