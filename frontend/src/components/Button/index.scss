@@ -1,6 +1,10 @@
 @import '/src/assets/styles/global.scss';
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background: $neutralWhite;
 
   font-size: 16px;
@@ -17,9 +21,13 @@
     cursor: pointer;
   }
 
+  &:disabled {
+    cursor: not-allowed;
+  }
+
   &.is-loading {
-    padding-top: 15.5px;
-    padding-bottom: 15.5px;
+    padding-top: 17.5px;
+    padding-bottom: 17.5px;
 
     img {
       animation: 2000ms linear 0s infinite normal none running loading;
@@ -46,6 +54,12 @@
     &:active, &:focus {
       background: $pacificBlue800;
     }
+
+    &:disabled {
+      background: $blueGray50;
+      color: $blueGray200;
+      box-shadow: none;
+    }
   }
 
   &.btn-secondary {
@@ -65,6 +79,11 @@
 
     &:active, &:focus {
       background: $blueGray50;
+    }
+
+    &:disabled {
+      color: $blueGray200;
+      border: 2px solid $blueGray200;
     }
   }
 }

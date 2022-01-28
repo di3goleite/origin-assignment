@@ -22,6 +22,11 @@ export const Primary = (args) => (
     Continue
   </Button>
 );
+export const PrimaryDisabled = (args) => (
+  <Button {...args} type="primary" disabled>
+    Continue
+  </Button>
+);
 
 export const Loading = (args) => (
   <Button {...args} type="primary" isLoading>
@@ -31,6 +36,11 @@ export const Loading = (args) => (
 
 export const Secondary = (args) => (
   <Button {...args} variant="secondary">
+    Return
+  </Button>
+);
+export const SecondaryDisabled = (args) => (
+  <Button {...args} variant="secondary" disabled>
     Return
   </Button>
 );
