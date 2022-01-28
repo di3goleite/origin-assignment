@@ -41,10 +41,14 @@ function Home() {
       try {
         setIsLoading(true);
         const result = await computeScore({ annualIncome, monthlyCosts });
-        setIsLoading(false);
-        navigate('/result', {
-          state: { score: String(result.score).toLowerCase() }
-        });
+
+        // Add timeout for better user experience
+        setTimeout(() => {
+          setIsLoading(false);
+          navigate('/result', {
+            state: { score: String(result.score).toLowerCase() }
+          });
+        }, 2000);
       } catch (e) {
         console.error(e);
         setIsLoading(false);
