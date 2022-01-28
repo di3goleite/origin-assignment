@@ -41,12 +41,12 @@ function Home() {
       try {
         setIsLoading(true);
         const result = await computeScore({ annualIncome, monthlyCosts });
+        setIsLoading(false);
         navigate('/result', {
           state: { score: String(result.score).toLowerCase() }
         });
       } catch (e) {
         console.error(e);
-      } finally {
         setIsLoading(false);
       }
     }
