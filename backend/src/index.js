@@ -1,16 +1,31 @@
+const { financialLifeSchema } = require('./utils/validations');
+const { computeScore } = require('./utils/lib');
+
 // Read .env file in root folder
 require('dotenv').config();
 
+// Constraints definitions
+const {
+  APP_ENV,
+  APP_HOST,
+  APP_PORT,
+  LOGGING_LEVEL,
+  FRONTEND_APP_HOST,
+  IS_HTTPS_ENABLED
+} = process.env;
 const FALLBACK_APP_PORT = 3002;
-const { APP_ENV, APP_PORT, LOGGING_LEVEL } = process.env;
-const { financialLifeSchema } = require('./utils/validations');
-const { computeScore } = require('./utils/lib');
 
 const fastify = require('fastify')({
   logger: {
     level: LOGGING_LEVEL ? LOGGING_LEVEL : 'info',
     prettyPrint: APP_ENV === 'dev'
   }
+});
+
+fastify.register(require('fastify-cors'), {
+  origin: `${
+    IS_HTTPS_ENABLED === 'true' ? 'https' : 'http'
+  }://${FRONTEND_APP_HOST}`
 });
 
 fastify.register(require('fastify-swagger'), {
@@ -25,7 +40,7 @@ fastify.register(require('fastify-swagger'), {
       url: 'https://useorigin.notion.site/THA-Web-Interface-API-application-4819947101684706b984f04e9aef9294',
       description: 'Find more info here'
     },
-    host: `localhost:${APP_PORT || FALLBACK_APP_PORT}`,
+    host: `${APP_HOST}:${APP_PORT || FALLBACK_APP_PORT}`,
     schemes: ['http'],
     consumes: ['application/json'],
     produces: ['application/json']
