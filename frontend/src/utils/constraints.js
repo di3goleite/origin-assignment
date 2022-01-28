@@ -13,6 +13,7 @@ export const scoreTypeMessage = {
   }
 };
 
-export const validationMessages = {
-  required: 'This field is required'
-};
+export const inputValidations = [
+  { type: 'required', condition: true },
+  { type: 'min', condition: 1 }
+];

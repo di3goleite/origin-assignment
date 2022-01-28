@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import BaseContainer from '../Base';
 import components from '../../components';
 import { computeScore } from '../../utils/api';
+import { validation } from '../../utils/input';
+import { inputValidations } from '../../utils/constraints';
 
 import icons from '../../assets/icons';
 import './index.scss';
@@ -11,21 +13,33 @@ import './index.scss';
 const { Card, Input, Button } = components;
 
 function Home() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [hasInputError, setHasInputError] = useState(false);
   const [annualIncome, setAnnualIncome] = useState('');
   const [monthlyCosts, setMonthlyCosts] = useState('');
-
+  const [errors, setErrors] = useState({ annualIncome: '', monthlyCosts: '' });
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
+  // Reset validation errors states
+  useEffect(() => {
+    setErrors({ annualIncome: '', monthlyCosts: '' });
+  }, [annualIncome, monthlyCosts]);
+
+  const runInputsValidations = () => {
+    const annualIncomeErrors = validation(annualIncome, inputValidations);
+    const monthlyCostsErrors = validation(monthlyCosts, inputValidations);
+    const foundErrors = {
+      annualIncome: annualIncomeErrors.length > 0 ? annualIncomeErrors[0] : '',
+      monthlyCosts: monthlyCostsErrors.length > 0 ? monthlyCostsErrors[0] : ''
+    };
+    setErrors(foundErrors);
+    return foundErrors;
+  };
+
   const onSubmit = async () => {
-    if (!annualIncome || !monthlyCosts) {
-      setHasInputError(true);
-    } else {
+    const foundErrors = runInputsValidations();
+    if (!foundErrors.annualIncome && !foundErrors.monthlyCosts) {
       try {
         setIsLoading(true);
-        setHasInputError(false);
-
         const result = await computeScore({ annualIncome, monthlyCosts });
         navigate('/result', {
           state: { score: String(result.score).toLowerCase() }
@@ -56,24 +70,17 @@ function Home() {
             id="annual-income"
             label="Annual Income"
             onChange={setAnnualIncome}
-            onError={setHasInputError}
-            isRequired
+            error={errors.annualIncome}
           />
           <Input
             id="monthly-costs"
             label="Monthly Costs"
             onChange={setMonthlyCosts}
-            onError={setHasInputError}
-            isRequired
+            error={errors.monthlyCosts}
           />
         </div>
         <div className="card-footer">
-          <Button
-            variant="primary"
-            onClick={onSubmit}
-            disabled={hasInputError}
-            isLoading={isLoading}
-          >
+          <Button variant="primary" onClick={onSubmit} isLoading={isLoading}>
             Continue
           </Button>
         </div>
