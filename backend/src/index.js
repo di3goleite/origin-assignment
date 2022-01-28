@@ -2,6 +2,8 @@
 require('dotenv').config();
 
 const { APP_ENV, APP_PORT, LOGGING_LEVEL } = process.env;
+const { financialLifeSchema } = require('./utils/validations');
+const { computeScore } = require('./utils/lib');
 
 const fastify = require('fastify')({
   logger: {
@@ -10,8 +12,11 @@ const fastify = require('fastify')({
   }
 });
 
-fastify.get('/', async () => {
-  return { hello: 'world' };
+// Routes
+fastify.post('/compute/score', financialLifeSchema, async (request) => {
+  const { annualIncome, monthlyCosts } = request.body;
+  const score = computeScore(annualIncome, monthlyCosts);
+  return { score };
 });
 
 const bootstrap = async () => {
@@ -23,4 +28,5 @@ const bootstrap = async () => {
   }
 };
 
+// Server start up
 bootstrap();
