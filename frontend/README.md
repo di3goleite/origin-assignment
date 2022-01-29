@@ -52,7 +52,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run lint`
 
-Run eslint against all the files available on `src/` folder.
+Runs Eslint against all the files available on `src/` folder.
 
 ### `npm run test`
 
