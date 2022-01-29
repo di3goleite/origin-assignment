@@ -1,11 +1,11 @@
 # THA: Web Interface
 
-Web application made with React. For this project, we have these deliverables:
+Responsive web interface made with React. For this project, we have these deliverables:
 
-* Application: made with React
-* Unit tests: made with React Testing Library
-* End-to-end test: made with Cypress
-* Live documentation: made with Storybook
+* Application: made with React;
+* Unit tests: made with React Testing Library;
+* End-to-end test: made with Cypress;
+* Live documentation: made with Storybook.
 
 ## Requirements
 
@@ -30,7 +30,7 @@ npm start
 
 ## Available Scripts
 
-In the project directory, you can run:
+In this app directory, you can run:
 
 ### `npm start`
 

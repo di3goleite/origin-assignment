@@ -2,9 +2,9 @@
 
 API application made with Fastify. For this project, we have these deliverables:
 
-* Application: made with Fastify
-* Unit tests: made with Jest
-* Live documentation: made with Swagger
+* Application: made with Fastify;
+* Unit tests: made with Jest;
+* Live documentation: made with Swagger.
 
 ## Requirements
 
