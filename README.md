@@ -8,9 +8,9 @@ Understand user financial wellness score based on his annual gross income and av
 
 ## Project Structure
 
-This repository contains two projects. Both of the are covering specific parts of this applications.:
+This repository contains two projects. Both of the are covering specific parts of this applications:
 
 * [Frontend](/frontend)
 * [Backend](/backend)
 
-All the necessary instructions, describing how to run, build and test each project are available inside of each on of theses folders.
+All the necessary instructions, describing how to run, build and test each project are available inside of each one of theses folders.
