@@ -2,7 +2,7 @@
 
 API application made with Fastify. For this project, we have these deliverables:
 
-* Application: made with fastify
+* Application: made with Fastify
 * Unit tests: made with Jest
 * Live documentation: made with Swagger
 
@@ -40,7 +40,7 @@ Runs the API in the chosen environment mode. This configuration is available on 
 
 Launches Swagger app live documentation. Open [http://localhost:3002/docs](http://localhost:3002/docs) to view it in your browser.
 
-![Swagger live documentation](https://i.imgur.com/pdm2XzD.png)
+![Swagger live documentation](https://i.imgur.com/bqZZSRK.png)
 
 ### `npm run watch`
 
