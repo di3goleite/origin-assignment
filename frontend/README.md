@@ -12,6 +12,24 @@ Web application made with React. For this project, we have these derivables:
 * This project requires as base requirements the latest LTS version of [NodeJS](https://nodejs.org/) and NPM;
 * To run the end-to-end tests is necessary to install [Cypress system requirements](https://docs.cypress.io/guides/getting-started/installing-cypress#System-requirements).
 
+## Usage
+
+### Install all dependencies
+
+```
+npm install
+```
+
+### Start this application
+
+P.S: Before start this application, don't forget to run the [backend](/backend) service as well.
+
+```
+npm start
+```
+
+Before
+
 ## Available Scripts
 
 In the project directory, you can run:
