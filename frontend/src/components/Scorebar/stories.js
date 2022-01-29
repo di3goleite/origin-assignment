@@ -10,6 +10,7 @@ export default {
   },
   argTypes: {
     type: {
+      description: 'Financial score type',
       options: ['healthy', 'medium', 'low'],
       control: { type: 'select' }
     }

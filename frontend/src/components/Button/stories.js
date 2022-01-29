@@ -11,6 +11,7 @@ export default {
   },
   argTypes: {
     variant: {
+      description: 'Button type',
       options: ['primary', 'secondary'],
       control: { type: 'select' }
     }
