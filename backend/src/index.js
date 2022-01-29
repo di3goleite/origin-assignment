@@ -1,22 +1,15 @@
 const { financialLifeSchema } = require('./utils/validations');
+const { swaggerConfig } = require('./utils/constraints');
 const { computeScore } = require('./utils/lib');
-const { getSwaggerConfig } = require('./utils/constraints');
 
 // Read .env file from root folder
 require('dotenv').config();
 
 // Constraints definitions
-const {
-  APP_ENV,
-  APP_HOST,
-  APP_PORT,
-  LOGGING_LEVEL,
-  FRONTEND_APP_HOST,
-  SWAGGER_DOCS_HOST
-} = process.env;
-
+const { APP_ENV, APP_HOST, APP_PORT, LOGGING_LEVEL, FRONTEND_APP_HOST } =
+  process.env;
 const FALLBACK_APP_PORT = 3002;
-const BACKEND_APP_HOST = `${APP_HOST}:${APP_PORT || FALLBACK_APP_PORT}`;
+const BACKEND_APP_HOST = `http://${APP_HOST}:${APP_PORT || FALLBACK_APP_PORT}`;
 
 // Fastify initialization
 const fastify = require('fastify')({
@@ -28,13 +21,10 @@ const fastify = require('fastify')({
 
 // Fastify plugins register
 fastify.register(require('fastify-cors'), {
-  origin: [FRONTEND_APP_HOST, SWAGGER_DOCS_HOST]
+  origin: [FRONTEND_APP_HOST, BACKEND_APP_HOST]
 });
 
-fastify.register(
-  require('fastify-swagger'),
-  getSwaggerConfig(BACKEND_APP_HOST)
-);
+fastify.register(require('fastify-swagger'), swaggerConfig);
 
 // API routes
 fastify.post('/compute/score', financialLifeSchema, async (request) => {

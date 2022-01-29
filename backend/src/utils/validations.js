@@ -9,6 +9,15 @@ const financialLifeSchema = {
       },
       required: ['annualIncome', 'monthlyCosts'],
       additionalProperties: false
+    },
+    response: {
+      200: {
+        description: 'Successful response',
+        type: 'object',
+        properties: {
+          score: { type: 'string' }
+        }
+      }
     }
   }
 };
