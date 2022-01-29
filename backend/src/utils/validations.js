@@ -1,3 +1,4 @@
+// Request validation for financial life object
 const financialLifeSchema = {
   schema: {
     body: {

@@ -1,7 +1,8 @@
 const { financialLifeSchema } = require('./utils/validations');
 const { computeScore } = require('./utils/lib');
+const { getSwaggerConfig } = require('./utils/constraints');
 
-// Read .env file in root folder
+// Read .env file from root folder
 require('dotenv').config();
 
 // Constraints definitions
@@ -13,8 +14,11 @@ const {
   FRONTEND_APP_HOST,
   SWAGGER_DOCS_HOST
 } = process.env;
-const FALLBACK_APP_PORT = 3002;
 
+const FALLBACK_APP_PORT = 3002;
+const BACKEND_APP_HOST = `${APP_HOST}:${APP_PORT || FALLBACK_APP_PORT}`;
+
+// Fastify initialization
 const fastify = require('fastify')({
   logger: {
     level: LOGGING_LEVEL ? LOGGING_LEVEL : 'info',
@@ -22,51 +26,24 @@ const fastify = require('fastify')({
   }
 });
 
+// Fastify plugins register
 fastify.register(require('fastify-cors'), {
   origin: [FRONTEND_APP_HOST, SWAGGER_DOCS_HOST]
 });
 
-fastify.register(require('fastify-swagger'), {
-  routePrefix: '/docs',
-  swagger: {
-    info: {
-      title: 'Origin Financial',
-      description: 'Financial wellness score calculation',
-      version: '0.1.0'
-    },
-    externalDocs: {
-      url: 'https://useorigin.notion.site/THA-Web-Interface-API-application-4819947101684706b984f04e9aef9294',
-      description: 'Find more info here'
-    },
-    host: `${APP_HOST}:${APP_PORT || FALLBACK_APP_PORT}`,
-    schemes: ['http'],
-    consumes: ['application/json'],
-    produces: ['application/json']
-  },
-  uiConfig: {
-    docExpansion: 'full',
-    deepLinking: false
-  },
-  uiHooks: {
-    onRequest: function (request, reply, next) {
-      next();
-    },
-    preHandler: function (request, reply, next) {
-      next();
-    }
-  },
-  staticCSP: true,
-  transformStaticCSP: (header) => header,
-  exposeRoute: true
-});
+fastify.register(
+  require('fastify-swagger'),
+  getSwaggerConfig(BACKEND_APP_HOST)
+);
 
-// Routes
+// API routes
 fastify.post('/compute/score', financialLifeSchema, async (request) => {
   const { annualIncome, monthlyCosts } = request.body;
   const score = computeScore(annualIncome, monthlyCosts);
   return { score };
 });
 
+// API start up
 const bootstrap = async () => {
   try {
     await fastify.listen(APP_PORT || FALLBACK_APP_PORT);
@@ -76,6 +53,4 @@ const bootstrap = async () => {
     process.exit(1);
   }
 };
-
-// Server start up
 bootstrap();
