@@ -11,7 +11,7 @@ const {
   APP_PORT,
   LOGGING_LEVEL,
   FRONTEND_APP_HOST,
-  IS_HTTPS_ENABLED
+  SWAGGER_DOCS_HOST
 } = process.env;
 const FALLBACK_APP_PORT = 3002;
 
@@ -23,9 +23,7 @@ const fastify = require('fastify')({
 });
 
 fastify.register(require('fastify-cors'), {
-  origin: `${
-    IS_HTTPS_ENABLED === 'true' ? 'https' : 'http'
-  }://${FRONTEND_APP_HOST}`
+  origin: [FRONTEND_APP_HOST, SWAGGER_DOCS_HOST]
 });
 
 fastify.register(require('fastify-swagger'), {

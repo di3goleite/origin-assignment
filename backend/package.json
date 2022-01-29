@@ -9,10 +9,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start:prod": "node src/index.js",
-    "start:dev": "nodemon src/index.js -e json,js",
-    "test": "jest",
-    "test:watch": "jest --coverage --watchAll",
+    "start": "node src/index.js",
+    "watch": "nodemon src/index.js -e json,js",
+    "test": "jest --coverage --watchAll",
     "lint": "eslint src"
   },
   "dependencies": {
