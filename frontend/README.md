@@ -28,8 +28,6 @@ P.S: Before start this application, don't forget to run the [backend](/backend) 
 npm start
 ```
 
-Before
-
 ## Available Scripts
 
 In the project directory, you can run:
