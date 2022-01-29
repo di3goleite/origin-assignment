@@ -12,12 +12,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:watch": "react-scripts test --coverage --watchAll",
-    "eject": "react-scripts eject",
     "cypress": "cypress open",
-    "lint": "eslint src",
     "storybook": "start-storybook -p 3001 -s public",
-    "build-storybook": "build-storybook -s public"
+    "lint": "eslint src"
   },
   "dependencies": {
     "react": "^17.0.2",
