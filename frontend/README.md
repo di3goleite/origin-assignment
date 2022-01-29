@@ -2,10 +2,10 @@
 
 Web application made with React. For this project, we have these derivables:
 
-* Application: made with react
-* Unit tests: made with react testing library
-* End-to-end test: made with cypress
-* Live documentation: made with storybooks
+* Application: made with React
+* Unit tests: made with React Testing Library
+* End-to-end test: made with Cypress
+* Live documentation: made with Storybook
 
 ## Requirements
 
