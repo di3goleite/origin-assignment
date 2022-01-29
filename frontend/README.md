@@ -50,20 +50,28 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm lint`
+
+Run eslint against all the files available on `src/` folder.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+![Unity tests](https://i.imgur.com/XCpsH0E.png)
+
 ### `npm cypress`
 
-Launches Cypress end-to-end test runner. Before run this command, please keep in mind to execute the steps described on the requirements section of this file.
+Launches Cypress end-to-end test runner. Before run this command, please make sure to have this requirements in place:
+
+* The app running
+* [Cypress system requirements](https://docs.cypress.io/guides/getting-started/installing-cypress#System-requirements)
+
+![End-to-end tests](https://i.imgur.com/a52cZN2.png)
 
 ### `npm storybook`
 
 Launches Storybook app live documentation. Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 
-
-### `npm lint`
-
-Run eslint against all the files available on `src/` folder.
+![Storybook live documentation](https://i.imgur.com/43ebeR5.png)
