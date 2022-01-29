@@ -76,6 +76,7 @@
   "jest": {
     "collectCoverageFrom": [
       "src/components/**/*.js",
+      "src/utils/input.js",
       "!src/components/**/stories.js",
       "!<rootDir>/node_modules/"
     ]
