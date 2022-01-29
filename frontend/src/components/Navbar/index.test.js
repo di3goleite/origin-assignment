@@ -6,7 +6,6 @@ import Navbar from '.';
 describe('<Navbar />', () => {
   it('should render navbar', () => {
     const { container } = render(<Navbar />);
-
     expect(container.firstChild).toHaveClass('navbar');
   });
 });

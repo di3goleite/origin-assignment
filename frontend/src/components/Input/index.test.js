@@ -5,10 +5,22 @@ import Input from '.';
 
 describe('<Input />', () => {
   it('should render input', () => {
-    const inputId = 'input';
-    const labelText = 'Currency';
+    const label = 'Currency';
+    render(<Input id="currency-input" label={label} variant="currency" />);
+    expect(screen.getByLabelText(label)).toBeInTheDocument();
+  });
 
-    render(<Input id={inputId} label={labelText} />);
-    expect(screen.getByLabelText(labelText)).toBeInTheDocument();
+  it('should render input with error', () => {
+    const label = 'Currency';
+    const error = 'This field is required.';
+    render(
+      <Input
+        id="currency-input"
+        label={label}
+        variant="currency"
+        error={error}
+      />
+    );
+    expect(screen.getByText(error)).toBeInTheDocument();
   });
 });
